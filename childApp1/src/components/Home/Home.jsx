@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>Child App Home</div>
   )
 }
 

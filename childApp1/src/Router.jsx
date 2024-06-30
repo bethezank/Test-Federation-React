@@ -1,17 +1,19 @@
+import { lazy, useMemo } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import Home from './components/Home/Home'
-import About from './components/About/About'
-import Contact from './components/Contact/Contact'
+const Home = lazy( () => import('./components/Home/Home'))
+const About = lazy( () => import('./components/About/About'))
+const Contact = lazy( () => import('./components/Contact/Contact'))
 
 import MainLayout from './layout/MainLayout'
+import env from './service/env'
 
 
 const CreateRouter = () => {
 
-    const router = createBrowserRouter([
+    const router = useMemo( () => createBrowserRouter([
         {
-            path: `${import.meta.env.VITE_SITE_URL}`,
+            path: env('VITE_SITE_URL'),
             element: <MainLayout />,
             children: [
                 {
@@ -28,7 +30,8 @@ const CreateRouter = () => {
                 },
             ],
         },
-    ]);
+    ]), [])
+
 
     return (
         <RouterProvider router={router} />

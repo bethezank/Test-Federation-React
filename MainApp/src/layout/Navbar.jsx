@@ -13,7 +13,7 @@ const Navbar = () => {
       </h1>
       <ul>
         <li>
-          <Link to="/ChildApp1">ChildApp1</Link>
+          <Link to="/App/ChildApp1">ChildApp1</Link>
         </li>
       </ul>
     </nav>
