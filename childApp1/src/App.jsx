@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       {/* <Router /> */}
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path={env('VITE_SITE_URL')} element={<PrivateRoute Component={MainLayout} />}>
             <Route index element={<Home />} />
@@ -21,7 +21,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   )
 }
