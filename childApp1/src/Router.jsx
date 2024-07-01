@@ -38,6 +38,10 @@ const CreateRouter = () => {
             },
           ],
         },
+        {
+            path: '*',
+            element: <h1>Error Route (childApp)</h1>
+        }
       ]);
 
 

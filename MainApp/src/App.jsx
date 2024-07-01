@@ -9,8 +9,6 @@ import Loading from "./layout/Loading";
 // Child App
 const ChildApp1 = lazy(() => import('remoteApp/ChildApp1'))
 
-// import ChildApp1 from 'remoteApp/ChildApp1'
-
 function App() {
 
   return (
@@ -20,7 +18,7 @@ function App() {
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Home />} />
-            <Route path="/App/ChildApp1" element={<ChildApp1 />} />
+            <Route path="/App/ChildApp1/*" element={<ChildApp1 />} />
           </Routes>
         </Suspense>
       </MainLayout>

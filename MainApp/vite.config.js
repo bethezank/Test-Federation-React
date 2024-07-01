@@ -9,8 +9,11 @@ export default defineConfig({
     moduleFederation({
       name: 'MainApp', 
       remotes: {
-        // remoteApp: 'http://localhost:5001/App/ChildApp1/assets/childApp1.js',
-        remoteApp: 'http://localhost:5173/App/ChildApp1/assets/childApp1.js',
+        // เรียกใช้จาก url
+        remoteApp: 'http://localhost:5001/App/ChildApp1/assets/childApp1.js',
+
+        // เรียกใช้จาก folder public
+        // remoteApp: 'http://localhost:5000/App/ChildApp1/assets/childApp1.js',
       },
       shared: ['react','react-dom'],
     }),
