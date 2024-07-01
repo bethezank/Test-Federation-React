@@ -15,7 +15,7 @@ function App() {
       {/* <Router /> */}
       <BrowserRouter>
         <Routes>
-          <Route path={env('VITE_SITE_URL')} element={<MainLayout />}>
+          <Route path={env('VITE_SITE_URL')} element={<PrivateRoute Component={MainLayout} />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
@@ -27,3 +27,14 @@ function App() {
 }
 
 export default App
+
+const PrivateRoute = ({ Component }) => {
+
+  console.log('Private')
+
+  const hostURL = env('VITE_HOST_URL')
+  const currentURL = window.origin
+
+  return hostURL === currentURL ? <Component /> : <h1>Error</h1>
+
+}
