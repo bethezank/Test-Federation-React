@@ -1,4 +1,4 @@
-import { lazy, useMemo } from 'react'
+import { lazy } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const Home = lazy( () => import('./components/Home/Home'))
@@ -9,28 +9,36 @@ import MainLayout from './layout/MainLayout'
 import env from './service/env'
 
 
+const PrivateRoute = ({ Component }) => {
+  console.log('Private')
+  const hostURL = env('VITE_HOST_URL')
+  const currentURL = window.origin
+  return hostURL === currentURL ? <Component /> : <h1>Error</h1>
+}
+
+
 const CreateRouter = () => {
 
-    const router = useMemo( () => createBrowserRouter([
+    const router = createBrowserRouter([
         {
-            path: env('VITE_SITE_URL'),
-            element: <MainLayout />,
-            children: [
-                {
-                    index: true,
-                    element: <Home />
-                },
-                {
-                    path: "about",
-                    element: <About />,
-                },
-                {
-                    path: "contact",
-                    element: <Contact />,
-                },
-            ],
+          path: env('VITE_SITE_URL'),
+          element: <PrivateRoute Component={MainLayout} />,
+          children: [
+            {
+              index: true,
+              element: <Home />,
+            },
+            {
+              path: 'about',
+              element: <About />,
+            },
+            {
+              path: 'contact',
+              element: <Contact />,
+            },
+          ],
         },
-    ]), [])
+      ]);
 
 
     return (

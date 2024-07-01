@@ -1,18 +1,18 @@
-// import Router from "./Router";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Router from "./Router";
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import env from './service/env';
+// import env from './service/env';
 
-import MainLayout from './layout/MainLayout';
-import Home from './components/Home/Home';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
+// import MainLayout from './layout/MainLayout';
+// import Home from './components/Home/Home';
+// import About from './components/About/About';
+// import Contact from './components/Contact/Contact';
 
 
 function App() {
   return (
     <>
-      {/* <Router /> */}
+      <Router />
       {/* <BrowserRouter>
         <Routes>
           <Route path={env('VITE_SITE_URL')} element={<PrivateRoute Component={MainLayout} />}>
@@ -27,14 +27,3 @@ function App() {
 }
 
 export default App
-
-const PrivateRoute = ({ Component }) => {
-
-  console.log('Private')
-
-  const hostURL = env('VITE_HOST_URL')
-  const currentURL = window.origin
-
-  return hostURL === currentURL ? <Component /> : <h1>Error</h1>
-
-}
