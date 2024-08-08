@@ -2,7 +2,7 @@ const exportSet = new Set(['Module', '__esModule', 'default', '_export_sfc']);
       let moduleMap = {
 "./Remote1":()=>{
       dynamicLoadingCss([], false, './Remote1');
-      return __federation_import('./__federation_expose_Remote1-B9n0QhVZ.js').then(module =>Object.keys(module).every(item => exportSet.has(item)) ? () => module.default : () => module)},};
+      return __federation_import('./__federation_expose_Remote1-DPOLsFca.js').then(module =>Object.keys(module).every(item => exportSet.has(item)) ? () => module.default : () => module)},};
     const seen = {};
     const dynamicLoadingCss = (cssFilePaths, dontAppendStylesToHead, exposeItemName) => {
       const metaUrl = import.meta.url;

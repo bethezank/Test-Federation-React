@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     moduleFederation({
+
       // แชร์ไฟล์ไปให้ remote ใช้งานร่วมกัน
       name: "Host App Shared Components",
       filename: "HostApp.js",
@@ -18,9 +19,10 @@ export default defineConfig({
 
       // เอา Remote App ใส่ใน Folder public
       remotes: {
-        Remote1: "http://localhost:5001/remotes/Remote1/assets/Remote1.js",
+        Remote1: "http://localhost:5001/Apps/Remote1/assets/Remote1.js",
       },
       shared: ["react", "react-dom"],
+      
     }),
   ],
   build: {

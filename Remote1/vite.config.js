@@ -22,6 +22,7 @@ export default defineConfig({
         './Remote1': './src/App',
       },
       shared: ['react','react-dom']
+      
     }),
 
   ],
@@ -32,6 +33,6 @@ export default defineConfig({
     cssCodeSplit: false
   },
 
-  // ต้องตั้งค่าให้เหมือนกับใน ifreame ของ MainApp
+  // ตั้งค่าที่ Router ของ Host ให้ถูกต้องด้วย
   base: "/App/Remote1",
 });

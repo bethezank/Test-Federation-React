@@ -1,19 +1,23 @@
 import { lazy, useMemo } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-const Home = lazy( () => import('./components/Home/Home'))
-const About = lazy( () => import('./components/About/About'))
-const Contact = lazy( () => import('./components/Contact/Contact'))
-
+// Components
 import MainLayout from './layout/MainLayout'
+const Home = lazy(() => import('./components/Home/Home'))
+const About = lazy(() => import('./components/About/About'))
+const Contact = lazy(() => import('./components/Contact/Contact'))
+
+// Services
 import env from './service/env'
+import isEnterFromHost from './service/isEnterFromHost'
 
 
 const CreateRouter = () => {
 
-    const router = useMemo( () => createBrowserRouter([
+    const router = useMemo(() => createBrowserRouter([
         {
             path: env('VITE_SITE_URL'),
+            // path: "/",
             element: <PrivateRoute Component={MainLayout} />,
             children: [
                 {
@@ -42,13 +46,8 @@ const Router = () => <CreateRouter />
 export default Router
 
 
-export const PrivateRoute = ({ Component }) => {
+const PrivateRoute = ({ Component }) => {
 
-    // console.log('Private')
-  
-    const hostURL = env('VITE_HOST_URL')
-    const currentURL = window.origin
-  
-    return hostURL === currentURL ? <Component /> : <h1>Error</h1>
-  
-  }
+    return isEnterFromHost() ? <Component /> : <h1>403 Forbidden</h1>
+
+}

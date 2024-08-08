@@ -1,6 +1,6 @@
 const  Bethezank = () => {
   return (
-    <div>Bethezank</div>
+    <div>Bethezank Component from Host</div>
   )
 }
 

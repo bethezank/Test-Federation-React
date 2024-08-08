@@ -1,16 +1,17 @@
+import { Outlet } from "react-router-dom"
 import { useAuth } from "../hooks/useAuth"
 import Navbar from "./Navbar"
 
 
-const MainLayout = ({ children }) => {
+const MainLayout = () => {
 
-  const  auth = useAuth()
+  const auth = useAuth()
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
       Host app auth = {auth ? 'ok' : 'no'}
-      {children}
+      <Outlet />
     </>
   )
 }

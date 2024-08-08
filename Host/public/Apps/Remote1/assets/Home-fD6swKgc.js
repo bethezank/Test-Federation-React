@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports } from './__federation_expose_Remote1-B9n0QhVZ.js';
+import { j as jsxRuntimeExports } from './__federation_expose_Remote1-DPOLsFca.js';
 
 const remotesMap = {
 'HostApp':{url:'http://localhost:5001/assets/HostApp.js',format:'esm',from:'vite'}
@@ -100,10 +100,8 @@ const Home = () => {
       "Remote1 app auth = ",
       auth ? "ok" : "no"
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-      "Bethezank Component from Remote1",
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Bethezank, {})
-    ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Bethezank Component from Remote1" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Bethezank, {})
   ] });
 };
 

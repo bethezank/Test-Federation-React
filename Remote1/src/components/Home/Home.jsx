@@ -15,8 +15,8 @@ const Home = () => {
       </p>
       <p>
         Bethezank Component from Remote1
-        <Bethezank/>
       </p>
+      <Bethezank/>
     </>
   )
 }

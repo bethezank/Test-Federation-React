@@ -5178,14 +5178,23 @@ const MainLayout = () => {
   ] });
 };
 
+const isEnterFromHost = () => {
+    
+    const hostURL = env('VITE_HOST_URL');
+    const currentURL = window.origin;
+
+    return hostURL === currentURL ? true : false
+};
+
 const {lazy,useMemo} = await importShared('react');
-const Home = lazy(() => __vitePreload(() => import('./Home-Boc8FuIB.js'),true?[]:void 0));
-const About = lazy(() => __vitePreload(() => import('./About-DQPVq4_k.js'),true?[]:void 0));
-const Contact = lazy(() => __vitePreload(() => import('./Contact-bvCD-qPJ.js'),true?[]:void 0));
+const Home = lazy(() => __vitePreload(() => import('./Home-fD6swKgc.js'),true?[]:void 0));
+const About = lazy(() => __vitePreload(() => import('./About-4YtzUw5f.js'),true?[]:void 0));
+const Contact = lazy(() => __vitePreload(() => import('./Contact-4X1N0wFr.js'),true?[]:void 0));
 const CreateRouter = () => {
   const router = useMemo(() => createBrowserRouter([
     {
       path: env("VITE_SITE_URL"),
+      // path: "/",
       element: /* @__PURE__ */ jsxRuntimeExports.jsx(PrivateRoute, { Component: MainLayout }),
       children: [
         {
@@ -5207,9 +5216,7 @@ const CreateRouter = () => {
 };
 const Router = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CreateRouter, {});
 const PrivateRoute = ({ Component }) => {
-  const hostURL = env("VITE_HOST_URL");
-  const currentURL = window.origin;
-  return hostURL === currentURL ? /* @__PURE__ */ jsxRuntimeExports.jsx(Component, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Error" });
+  return isEnterFromHost() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Component, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "403 Forbidden" });
 };
 
 function App() {
