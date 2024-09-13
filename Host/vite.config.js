@@ -18,8 +18,13 @@ export default defineConfig({
       },
 
       // เอา Remote App ใส่ใน Folder public
+      // remotes: {
+      //   Remote1: "http://localhost:5001/Apps/Remote1/assets/Remote1.js",
+      // },
+
+      // แบบแยก url
       remotes: {
-        Remote1: "http://localhost:5001/Apps/Remote1/assets/Remote1.js",
+        Rework: "http://localhost:5002/App/Rework/assets/Rework.js",
       },
       shared: ["react", "react-dom"],
       

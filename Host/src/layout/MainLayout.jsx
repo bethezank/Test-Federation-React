@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { useAuth } from "../hooks/useAuth"
 import Navbar from "./Navbar"
+import { Suspense } from "react"
 
 
 const MainLayout = () => {
@@ -11,7 +12,10 @@ const MainLayout = () => {
     <>
       <Navbar />
       Host app auth = {auth ? 'ok' : 'no'}
-      <Outlet />
+      <hr />
+      <Suspense fallback="Loading...">
+        <Outlet />
+      </Suspense>
     </>
   )
 }
