@@ -9,12 +9,12 @@ const Home = () => {
 
   return (
     <>
-      <div>Remote1 Home</div>
+      <div>Rework Home</div>
       <p>
-        Remote1 app auth = {auth ? 'ok' : 'no'}
+        Rework app auth = {auth ? 'ok' : 'no'}
       </p>
       <p>
-        Bethezank Component from Remote1
+        Bethezank Component from Rework
       </p>
       <Bethezank/>
     </>

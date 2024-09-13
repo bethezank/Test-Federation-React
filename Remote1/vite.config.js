@@ -15,13 +15,15 @@ export default defineConfig({
       },
 
       // แชร์ออกไปให้ Host
-      name: 'Remote1',
-      filename: 'Remote1.js',
+      name: 'Rework',
+      filename: 'Rework.js',
       exposes: {
-        // สั่ง shear ออกไปทั้ง app
-        './Remote1': './src/App',
+        // ส่งออกไปทั้ง app
+        './Rework': './src/App',
+        // ส่งออก menu
+        './ReworkMenu': './src/layout/menu.js',
       },
-      shared: ['react','react-dom']
+      shared: ['react', 'react-dom', 'react-router-dom']
       
     }),
 
@@ -34,5 +36,5 @@ export default defineConfig({
   },
 
   // ตั้งค่าที่ Router ของ Host ให้ถูกต้องด้วย
-  base: "/App/Remote1",
+  base: "/App/Rework",
 });

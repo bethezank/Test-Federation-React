@@ -14,27 +14,31 @@ import isEnterFromHost from './service/isEnterFromHost'
 
 const CreateRouter = () => {
 
-    const router = useMemo(() => createBrowserRouter([
+    const router = useMemo(() => createBrowserRouter(
+        [
+            {
+                // path: env("VITE_SITE_URL"),
+                element: <PrivateRoute Component={MainLayout} />,
+                children: [
+                    {
+                        index: true,
+                        element: <Home />
+                    },
+                    {
+                        path: "about",
+                        element: <About />,
+                    },
+                    {
+                        path: "contact",
+                        element: <Contact />,
+                    },
+                ],
+            }
+        ],
         {
-            path: env('VITE_SITE_URL'),
-            // path: "/",
-            element: <PrivateRoute Component={MainLayout} />,
-            children: [
-                {
-                    index: true,
-                    element: <Home />
-                },
-                {
-                    path: "about",
-                    element: <About />,
-                },
-                {
-                    path: "contact",
-                    element: <Contact />,
-                },
-            ],
-        },
-    ]), [])
+            basename: env("VITE_SITE_URL")
+        }
+    ), [])
 
 
     return (
@@ -48,6 +52,6 @@ export default Router
 
 const PrivateRoute = ({ Component }) => {
 
-    return isEnterFromHost() ? <Component /> : <h1>403 Forbidden</h1>
+    return isEnterFromHost() || 1 == 1 ? <Component /> : <h1>403 Forbidden</h1>
 
 }

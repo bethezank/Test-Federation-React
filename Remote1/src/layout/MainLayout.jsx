@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import { Outlet } from "react-router-dom"
 
-import Menu from "./Menu"
+// import Menu from "./Menu"
 
 const MainLayout = () => {
   return (
@@ -9,7 +9,7 @@ const MainLayout = () => {
       <Suspense fallback="Loading...">
         <Outlet />
       </Suspense>
-      <Menu />
+      {/* <Menu /> */}
     </>
   )
 }
